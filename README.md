@@ -32,6 +32,8 @@ My intention is to feed the antenna wire through a nylon rope so the
 rope is tensioned, but the wire is not.  The trap structure will just be loosely
 hanging from the wire ends that stick out from the rope an inch or two.
 
+![Screen capture of my 3.1 inch, 6.25 turn form for RG8/X. Resonates at 7.200MHz](/images/coax-trap-form-rg8x-6.25turns-3.1in.png)
+
 # Your Antenna!
 But the OpenSCAD file is entirely parametric. You can adjust the variables:
 ```
