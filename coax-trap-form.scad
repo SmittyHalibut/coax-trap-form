@@ -30,27 +30,36 @@
  * hanging from the wire ends that stick out from the rope an inch or two.
  */
  
+// Thingiverse Customizer displays the immediately preceeding comment. So 
+// You'll see some duplication of comments below, with the last line being a shorter
+// version to fit on one line for Thingiverse.  Sorry about that.
+ 
 // What are the parameters of the form for your particular trap?
-// Calculator: https://www.qsl.net/ve6yp/coaxtrap.zip
+// The coil diameter. Calculator: https://www.qsl.net/ve6yp/coaxtrap.zip
 form_diameter_in = 3.1;
+// Number of turns (can be decimal, like 6.25) Calculator: https://www.qsl.net/ve6yp/coaxtrap.zip
 num_turns = 6.25;
 
 // What Coax are you using?
 // RG8/X, LMR240 = 0.242
 // RG58, LMR195 = 0.195
+// What's the diameter of your coax?
 coax_diameter_in = 0.242;
 
 // What size bolt are you using to attach to the antenna? 
 // Oversize by ~10%; 3D printing isn't that precise, and OpenSCAD models circles with lines
 // on the INSIDE of the circle, so the actual dimention is smaller than you think.
 // No 10-24 = 0.200
+// Size of the bolts you use to attach to antenna. Oversize by ~10%.
 bolt_diameter_in = 0.200;
 
 // How thick do you need the form to be?  Thicker is stronger, but is heavier and takes
 // more material.  I find .150" to be pretty good, but adjust as you need.
+// How thick should the form be?
 form_thickness_in = .150;
  
 // Derived dimensions; you shouldn't need to change these:
+// Don't change this in Thingiverse Customizer, it's a constant.
 in2mm = 25.4;
 form_diameter = form_diameter_in * in2mm;
 coax_diameter = coax_diameter_in * in2mm;
