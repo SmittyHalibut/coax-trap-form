@@ -1,4 +1,6 @@
 /*
+ * The official home for these files is https://github.com/SmittyHalibut/coax-trap-form
+ *
  * A form for a coax trap, to make a trap dipole
  * Electrical design from the 2015 ARRL Antenna Handbook 
  * page 10-15, section 10.2.2, "Five Band W3DZZ Trap Antenna"
@@ -28,18 +30,33 @@
  * hanging from the wire ends that stick out from the rope an inch or two.
  */
  
-in2mm = 25.4;
- 
+// What are the parameters of the form for your particular trap?
 // Calculator: https://www.qsl.net/ve6yp/coaxtrap.zip
-form_diameter = 3.1*in2mm;
+form_diameter_in = 3.1;
 num_turns = 6.25;
+
+// What Coax are you using?
 // RG8/X, LMR240 = 0.242
-coax_diameter = 0.242*in2mm;
-// No 10-24
-bolt_diameter = 0.200*in2mm;
-form_thickness = .200*in2mm;
+// RG58, LMR195 = 0.195
+coax_diameter_in = 0.242;
+
+// What size bolt are you using to attach to the antenna? 
+// Oversize by ~10%; 3D printing isn't that precise, and OpenSCAD models circles with lines
+// on the INSIDE of the circle, so the actual dimention is smaller than you think.
+// No 10-24 = 0.200
+bolt_diameter_in = 0.200;
+
+// How thick do you need the form to be?  Thicker is stronger, but is heavier and takes
+// more material.  I find .150" to be pretty good, but adjust as you need.
+form_thickness_in = .150;
  
 // Derived dimensions; you shouldn't need to change these:
+in2mm = 25.4;
+form_diameter = form_diameter_in * in2mm;
+coax_diameter = coax_diameter_in * in2mm;
+bolt_diameter = bolt_diameter_in * in2mm;
+form_thickness = form_thickness_in * in2mm;
+
 coax_radius = coax_diameter/2;
 coax_turns_height = coax_diameter * num_turns;
 coax_turns_angle = num_turns * 360;

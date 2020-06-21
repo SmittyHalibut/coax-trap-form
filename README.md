@@ -1,6 +1,8 @@
 # coax-trap-form
 Parametric OpenSCAD model for making coil forms for coax-traps for wire antennas.
-Source for this can be found at [https://github.com/SmittyHalibut/coax-trap-form](https://github.com/SmittyHalibut/coax-trap-form)
+The official home for these files is [https://github.com/SmittyHalibut/coax-trap-form](https://github.com/SmittyHalibut/coax-trap-form)
+(Sorry Thingiverse, you're just a point-in-time snapshot when I think to make it.)
+Look to github for the newest versions of all this.
 
 # Electrical Design
 Electrical design from the 2015 ARRL Antenna Handbook 
@@ -35,7 +37,11 @@ hanging from the wire ends that stick out from the rope an inch or two.
 ![Screen capture of my 3.1 inch, 6.25 turn form for RG8/X. Resonates at 7.200MHz](/images/coax-trap-form-rg8x-6.25turns-3.1in.png)
 
 # Your Antenna!
-But the OpenSCAD file is entirely parametric. You can adjust the variables:
+But the OpenSCAD file is entirely parametric. 
+
+Install [OpenSCAD](https://www.openscad.org/), open the `.scad` file, and adjust the parameters as listed below to make your own form.  Then Render the form (will take several minutes), and save your STL.  Then you can slice it as normal.
+
+You can adjust the variables:
 ```
 // Calculator: https://www.qsl.net/ve6yp/coaxtrap.zip
 form_diameter = 3.1*in2mm;
