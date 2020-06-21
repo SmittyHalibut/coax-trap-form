@@ -26,7 +26,7 @@ able to make a coax trap with the exact values above; all common coax has
 too much C/ft to get down to 100pF.  The best I could do was with my 
 RG8/X, down to 137pF and 3.575uH, 6.25 turn on a 3.1in form.
 
-This is that form, with holes in the right places for coax and attachments.
+The included STL is that form, with holes in the right places for coax and attachments.
 Printed vertically like a tower, **THIS WILL NOT BE STRUCTURAL!**
 My intention is to feed the antenna wire through a nylon rope so the 
 rope is tensioned, but the wire is not.  The trap structure will just be loosely
