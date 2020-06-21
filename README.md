@@ -1,5 +1,6 @@
 # coax-trap-form
 Parametric OpenSCAD model for making coil forms for coax-traps for wire antennas.
+Source for this can be found at [https://github.com/SmittyHalibut/coax-trap-form](https://github.com/SmittyHalibut/coax-trap-form)
 
 # Electrical Design
 Electrical design from the 2015 ARRL Antenna Handbook 
@@ -48,7 +49,7 @@ a dirty American ;-), so I included `in2mm = 25.4;` to convert.
 
 # Show me your antenna!
 If you build something with this model, I'd appreciate it if you sent me
-a picture and/or description of what you built.  I'm [https://twitter.com/SmittyHalibut](@SmittyHalibut on Twitter).
+a picture and/or description of what you built.  I'm [@SmittyHalibut on Twitter](https://twitter.com/SmittyHalibut).
 
 73 de KR6ZY, @SmittyHalibut
 -Mark
