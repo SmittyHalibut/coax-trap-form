@@ -10,8 +10,9 @@ length to resonate at 20, 15, and 10m as well, at higher harmonics.
 The idea being a 5 band antenna with only a single pair of traps.
 
 The book shows two designs, depending on which diagram you look at:
-1: Traps: 60pF, 8.2uH, 22' outer wire length
-2: Traps: 100pF, 4.9uH, 21' outer wire length
+1. Traps: 60pF, 8.2uH, 22' outer wire length
+1. Traps: 100pF, 4.9uH, 21' outer wire length
+
 Both have 32' inner length, and are fed with 75ohm.
 
 My goal is to make these traps using the coax trap design discussed
@@ -47,7 +48,7 @@ a dirty American ;-), so I included `in2mm = 25.4;` to convert.
 
 # Show me your antenna!
 If you build something with this model, I'd appreciate it if you sent me
-a picture and/or description of what you built.  I'm @SmittyHalibut on Twitter.
+a picture and/or description of what you built.  I'm [https://twitter.com/SmittyHalibut](@SmittyHalibut on Twitter).
 
 73 de KR6ZY, @SmittyHalibut
 -Mark
