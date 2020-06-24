@@ -36,6 +36,12 @@ hanging from the wire ends that stick out from the rope an inch or two.
 
 ![Screen capture of my 3.1 inch, 6.25 turn form for RG8/X. Resonates at 7.200MHz](/images/coax-trap-form-rg8x-6.25turns-3.1in.png)
 
+## 14.15MHz trap: 2.0 inch, 5.04 turns, RG8/X.
+I also made a 20m trap at 14.15MHz, and included the STL for it.  The frequencies
+are indicated in the file names.  Just in case I can't get the above 40m trap
+antenna design to tune up on higher bands, I want an option for at least getting
+on 20m during field day.  :-)
+
 # Your Antenna!
 But the OpenSCAD file is entirely parametric. 
 
@@ -44,17 +50,14 @@ Install [OpenSCAD](https://www.openscad.org/), open the `.scad` file, and adjust
 You can adjust the variables:
 ```
 // Calculator: https://www.qsl.net/ve6yp/coaxtrap.zip
-form_diameter = 3.1*in2mm;
+form_diameter_in = 3.1;
 num_turns = 6.25;
 // RG8/X, LMR240 = 0.242
-coax_diameter = 0.242*in2mm;
+coax_diameter_in = 0.242;
 // No 10-24
-bolt_diameter = 0.200*in2mm;
-form_thickness = .200*in2mm;
+bolt_diameter_in = 0.200;
+form_thickness_in = .200;
 ```
-OpenSCAD uses millimeters, but the coil form calculator uses inches (and I'm
-a dirty American ;-), so I included `in2mm = 25.4;` to convert.
-
 # Show me your antenna!
 If you build something with this model, I'd appreciate it if you sent me
 a picture and/or description of what you built.  I'm [@SmittyHalibut on Twitter](https://twitter.com/SmittyHalibut).
