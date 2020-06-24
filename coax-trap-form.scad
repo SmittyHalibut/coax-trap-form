@@ -36,9 +36,9 @@
  
 // What are the parameters of the form for your particular trap?
 // The coil diameter. Calculator: https://www.qsl.net/ve6yp/coaxtrap.zip
-form_diameter_in = 3.1;
+form_diameter_in = 2.1;
 // Number of turns (can be decimal, like 6.25) Calculator: https://www.qsl.net/ve6yp/coaxtrap.zip
-num_turns = 6.25;
+num_turns = 5.04;
 
 // What Coax are you using?
 // RG8/X, LMR240 = 0.242
