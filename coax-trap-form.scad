@@ -29,7 +29,7 @@
  * rope is tensioned, but the wire is not.  The trap structure will just be loosely
  * hanging from the wire ends that stick out from the rope an inch or two.
  */
-use<Writescad/write.scad>
+use <Writescad/Write.scad>
 
 // Thingiverse Customizer displays the immediately preceeding comment. So 
 // You'll see some duplication of comments below, with the last line being a shorter
@@ -39,13 +39,16 @@ use<Writescad/write.scad>
 // The coil diameter. Calculator: https://www.qsl.net/ve6yp/coaxtrap.zip
 form_diameter_in = 2.1;
 // Number of turns (can be decimal, like 6.25) Calculator: https://www.qsl.net/ve6yp/coaxtrap.zip
-num_turns = 5.04;
+num_turns = 1;
 
 // What Coax are you using?
 // RG8/X, LMR240 = 0.242
 // RG58, LMR195 = 0.195
 // What's the diameter of your coax?
 coax_diameter_in = 0.242;
+
+// Coil pitch: center-to-center spacing of turns. Not less than coax_diameter_in.
+coax_pitch_in = 0.500;
 
 // What size bolt are you using to attach to the antenna? 
 // Oversize by ~10%; 3D printing isn't that precise, and OpenSCAD models circles with lines
@@ -58,17 +61,26 @@ bolt_diameter_in = 0.200;
 // more material.  I find .150" to be pretty good, but adjust as you need.
 // How thick should the form be?
 form_thickness_in = .150;
+
+// Text options
+// Text on top half, opposite top hole
+text_top = "20m";
+// Text on bottom half, opposite bottom hole
+text_bottom = "14.15MHz";
+
  
 // Derived dimensions; you shouldn't need to change these:
 // Don't change this in Thingiverse Customizer, it's a constant.
 in2mm = 25.4;
 form_diameter = form_diameter_in * in2mm;
 coax_diameter = coax_diameter_in * in2mm;
+coax_pitch = (coax_pitch_in < coax_diameter_in) ? coax_diameter : (coax_pitch_in * in2mm);
+echo(coax_pitch);
 bolt_diameter = bolt_diameter_in * in2mm;
 form_thickness = form_thickness_in * in2mm;
 
 coax_radius = coax_diameter/2;
-coax_turns_height = coax_diameter * num_turns;
+coax_turns_height = coax_pitch * num_turns;
 coax_turns_angle = num_turns * 360;
 trap_length = coax_turns_height + coax_diameter*2;  // One diameter on either side for "slack"
 extra_length = bolt_diameter*3;  // Additional form length on either side of the coil
@@ -141,13 +153,10 @@ translate([0, 0, trap_length]) {
                 // Bold surface, inside
                 translate([form_radius_actual-form_thickness, 0, bolt_diameter*1.5]) rotate(a=90, v=[0, 1, 0])
                     cylinder(h=form_thickness/2, d1=bolt_diameter*2, d2=bolt_diameter*3, center=true, $fn=20);
-            }
-            // Text
-            rotate(a=num_turns*360 - 180, v=[0, 0, 1]) {
-                translate([form_radius_actual, 0, bolt_diameter*1.5])
-                    rotate(a=90, v=[1, 0, 0]) rotate(a=90, v=[0, 1, 0]) 
-                        //text("20m", halign="center", valign="center");
-                        #writecylinder("20m", where=[0, 0, 0], radius=form_radius_actual+1, height=0);
+                // Text
+                rotate(a=-90, v=[0, 0, 1]) 
+                    writecylinder(text_top, where=[0, 0, bolt_diameter*1.5], radius=form_radius_actual, height=0,
+                        h=bolt_diameter*2);
             }
         }
         // Mount hole for hardware
@@ -173,7 +182,10 @@ translate([0, 0, -extra_length]) {
             // Bold surface, inside
             translate([form_radius_actual-form_thickness, 0, bolt_diameter*1.5]) rotate(a=90, v=[0, 1, 0])
                 cylinder(h=form_thickness/2, d1=bolt_diameter*2, d2=bolt_diameter*3, center=true, $fn=20);
-            
+            // Text
+            rotate(a=-90, v=[0, 0, 1]) 
+                writecylinder(text_bottom, where=[0, 0, bolt_diameter*1.5], radius=form_radius_actual, height=0,
+                    h=bolt_diameter*2);
         }
         // Mount hole for hardware
         translate([form_radius-form_thickness/2, 0, bolt_diameter*1.5]) rotate(a=90, v=[0, 1, 0])
