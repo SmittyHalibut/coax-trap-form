@@ -29,7 +29,8 @@
  * rope is tensioned, but the wire is not.  The trap structure will just be loosely
  * hanging from the wire ends that stick out from the rope an inch or two.
  */
- 
+use<Writescad/write.scad>
+
 // Thingiverse Customizer displays the immediately preceeding comment. So 
 // You'll see some duplication of comments below, with the last line being a shorter
 // version to fit on one line for Thingiverse.  Sorry about that.
@@ -140,6 +141,13 @@ translate([0, 0, trap_length]) {
                 // Bold surface, inside
                 translate([form_radius_actual-form_thickness, 0, bolt_diameter*1.5]) rotate(a=90, v=[0, 1, 0])
                     cylinder(h=form_thickness/2, d1=bolt_diameter*2, d2=bolt_diameter*3, center=true, $fn=20);
+            }
+            // Text
+            rotate(a=num_turns*360 - 180, v=[0, 0, 1]) {
+                translate([form_radius_actual, 0, bolt_diameter*1.5])
+                    rotate(a=90, v=[1, 0, 0]) rotate(a=90, v=[0, 1, 0]) 
+                        //text("20m", halign="center", valign="center");
+                        #writecylinder("20m", where=[0, 0, 0], radius=form_radius_actual+1, height=0);
             }
         }
         // Mount hole for hardware
